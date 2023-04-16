@@ -173,8 +173,8 @@ def get_config():
                         help="Number of parallel envs for evaluating rollouts")
     parser.add_argument("--n_render_rollout_threads", type=int, default=1,
                         help="Number of parallel envs for rendering rollouts")
-    parser.add_argument("--num_env_steps", type=int, default=5e5,
-                        help='Number of environment steps to train (default: 10e6)')
+    parser.add_argument("--num_env_steps", type=int, default=3e5,
+                        help='Number of environment steps to train (default:3e5)')
     parser.add_argument("--user_name", type=str, default='marl',help="[for wandb usage], to specify user's name for simply collecting training data.")
 
     # env parameters
@@ -220,10 +220,10 @@ def get_config():
                         help="Time length of chunks used to train a recurrent_policy")
 
     # optimizer parameters
-    parser.add_argument("--lr", type=float, default=5e-4,
-                        help='learning rate (default: 5e-4)')
-    parser.add_argument("--critic_lr", type=float, default=5e-4,
-                        help='critic learning rate (default: 5e-4)')
+    parser.add_argument("--lr", type=float, default=1e-4,
+                        help='learning rate (default: 1e-4)')
+    parser.add_argument("--critic_lr", type=float, default=1e-4,
+                        help='critic learning rate (default: 1e-4)')
     parser.add_argument("--opti_eps", type=float, default=1e-5,
                         help='RMSprop optimizer epsilon (default: 1e-5)')
     parser.add_argument("--weight_decay", type=float, default=0)
